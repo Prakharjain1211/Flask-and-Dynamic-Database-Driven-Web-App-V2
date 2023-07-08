@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>EminentEmployment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <style>
+    #banner {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      margin-bottom:16px;
+    }
+    #navbar1
+    {
+      padding-bottom:19px
+    }
+  </style>
+</head>
+
+<body>
+  <div id = "navbar1">
+  {% include 'nav.html' %}
+    </div>
+  <img class="img-fluid" id="banner" src="https://new-repo.prakharjain16.repl.co/static/banner.jpg" height="320">
+  <div class="container">
+    <h1 class="text-center mt-2 mb-">EminentEmployment</h1><br>
+    <div class="row" style="margin-bottom:16px">
+      <div class="col-md-6">
+    <p class="lead"> EminentEmployment is a premium job search platform dedicated to connecting talented professionals with elite career opportunities. Our platform is designed to cater to individuals who are seeking prestigious positions and are driven to excel in their respective fields.
+
+At EminentEmployment, we understand the value of exceptional talent and aim to provide a curated selection of job openings that match the aspirations and expertise of our discerning users. Our team of experts meticulously handpicks and verifies each job listing, ensuring that only the most esteemed and sought-after positions are showcased on our platform.
+
+With EminentEmployment, professionals gain access to a network of renowned companies, prestigious organizations, and influential industry leaders. Our platform goes beyond traditional job search functionalities, offering personalized career guidance, industry insights, and exclusive networking opportunities to propel your career to new heights.
+</p>
+      </div>
+      <div class="d-none d-md-block col-6">
+      <img src="static/peopleworking.jpg" style="height:370px;"></div>
+    </div>
+    <h2 class="text-center mt-2 mb-4">Current Job Openings</h2>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
+    <div class="text-center">
+      <a href="mailto:hello@employment.ai?subject=Question%20about%20Job%20Openings&body=My%20name%3A%20%3Cyour%20name%20here%3E%0D%0A%0D%0AMy%20Questions%3A%20%3Cyour%20question%20here%3E%0D%0A" class="btn btn-primary btn-lg">Contact Us</a>
+    </div>
+  </div>
+  {% include 'footer.html' %}
+</body>
+
+</html>
